@@ -32,5 +32,16 @@ print(soup.h3["class"])
 # Grab all URLS on a website
 for link in soup.find_all('a'):
     print(link.get('href'))
-
+# Get all text
 print(soup.get_text())
+# Get element with a **Kwargs
+print(soup.find(name="h1", id="name"))
+print(soup.find(name="h3", class_="heading"))
+# Get element with CSS selectors
+my_website = (soup.select_one("p a"))["href"]
+print(my_website)
+# print(my_website["href"])
+# Get element with ID name using #
+print(soup.select_one(selector="#name"))
+# Select by class of Heading
+print(soup.select_one(selector=".heading"))
