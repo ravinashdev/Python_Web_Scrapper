@@ -41,9 +41,10 @@ for anchor_row, score_row in zip(title_row_1, title_row_2):
     # print(score_row.find("span", class_="score").get_text(strip=True))
     # print("\n")
     new_entry= {
+        # Target 2nd element since we get 2 anchor tags
         "title": anchor_row.find_all("a")[1].get_text(strip=True),
         "link": anchor_row.find_all("a")[1].get("href"),
-        # Split string into elements and convert it to an into to later sort the dict
+        # Split string into elements and convert it to an into to later sort the dict,
         "score": int(score_row.find_all("span")[1].get_text(strip=True).split()[0]),
     }
     articles.append(new_entry)
