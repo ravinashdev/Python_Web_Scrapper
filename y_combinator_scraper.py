@@ -21,9 +21,9 @@ import requests
 # ---------------------------- FUNCTIONS ------------------------------- #
 
 # ---------------------------- UI SETUP ------------------------------- #
-url_response = requests.get("https://news.ycombinator.com/news")
+y_combinator_response = requests.get("https://news.ycombinator.com/news")
 # print(response.text)
-soup = BeautifulSoup(url_response.text, "html.parser")
+soup = BeautifulSoup(y_combinator_response.text, "html.parser")
 # print(soup.prettify())
 # title_row_1 = soup.find(name="tr", class_="athing submission").find_all("a")[1]
 # title_row_2 = soup.find(name="td", class_="subtext").find("span", class_="score")
